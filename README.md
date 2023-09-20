@@ -119,4 +119,45 @@ scenario - A complete path through a use case, from the first step to the last.
 * A single use case can have multiple scenarios, as long as each scenario has the same customer goal.
 * **Alternate paths** can be steps that occur only some of the time, or provide completely different paths through parts of a use case.
 * If a step is optional in how a system works, or a step provides an alternate path through a system, use numbered sub-steps.
-* You should almost always try to **avoid duplicate code**. Its a maintenance nightmare, and usually points to problems in how you've designed your system.
+* You should almost always try to **avoid duplicate code**. It's a maintenance nightmare and usually points to problems in how you've designed your system.
+
+## Chapter 4: Analysis
+Your application has to do more than work on your own personal development machine, finely tuned and perfectly set up; your apps have to work when real people use them.
+
+Analysis helps you ensure your system works in a real-world context.
+
+Textual analysis - Looking at the nouns (and verbs) in your use case to figure out classes and methods.
+> Pay attention to the nouns in your use case; in a use case, the nouns are usually the classes you need to write and focus on in your system.
+
+### From good analysis to good classes:
+- A good use case clearly and accurately explains what a system does, in language that’s easily understood.
+- With a good use case complete, textual analysis is a quick and easy way to figure out the classes in your system.
+
+### UML Terms
+Class diagrams are great for modeling the classes you need to create, but they don’t provide all the answers you’ll need in programming your system.
+
+````java
+allowedBarks: Bark[*]
+````
+[*] indicates the **multiplicity** of an attribute: how many of a certain type the attribute can hold.
+
+The asterisk '\*' indicates that an  attribute can hold an unlimited number of objects.
+
+Association - a solid line from one class to another is called an association. It means that one class is associated with another class by reference, extension, inheritance, etc.
+
+Remember, in Chapter 1, we said that delegation helps our applications stay loosely coupled. That means that your objects are independent of each other; in other words, changes to one object don’t require you to make a bunch of changes to other objects.
+> Delegation shields your objects from implementation changes to other objects in your software.
+
+### BULLET POINTS
+* Analysis helps you ensure that your software works in the real-world context, and not just in a perfect environment.
+* Use cases are meant to be understood by you, your managers, your customers, and other programmers.
+* You should write your use cases in whatever format makes them most usable to you and the other people who are looking at them.
+* A good use case precisely lays out what a system does, but does not indicate how the system accomplishes the task.
+* Each use case should focus on only one customer goal. If you have multiple goals, you will need to write multiple use cases.
+* Class diagrams give you an easy way to show your system and its code constructs at a 10,000-foot view.
+* The attributes in class diagrams usually map to the member variables of your class.
+* The operations in class diagrams usually represent the method of your classes.
+* Class diagrams leave lots of details out, such as class constructors, some type of information, and the purpose of operations in your classes.
+* Textual analysis helps you translate a use case into code-level classes, attributes, and operations.
+* The nouns of a use case are candidates for classes in your system, and the verbs are candidates for methods in your system's classes.
+* **Delegations** shields your object from implementation changes to other objects in your software.
