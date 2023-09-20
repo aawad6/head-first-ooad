@@ -102,8 +102,8 @@ Remember to check your requirements against your use cases.
 In the real world, requirements are always changing, and it’s up to you to roll with these changes and keep your customer satisfied.
 
 Change is constant, and your system should always improve every time you work on it.
-> Requirements always change. If you’ve got good use cases, though, you can usually change your software quickly to adjust to those new requirements.
 
+Requirements always change. If you’ve got good use cases, though, you can usually change your software quickly to adjust to those new requirements.
 > Sometimes a change in requirements reveals problems with your system that you didn’t even know were there.
 
 Alternate path - It's one or more steps that a use case has that are optional, or provide alternate ways to work through the use case.
@@ -141,7 +141,7 @@ allowedBarks: Bark[*]
 ````
 [*] indicates the **multiplicity** of an attribute: how many of a certain type the attribute can hold.
 
-The asterisk '\*' indicates that an  attribute can hold an unlimited number of objects.
+The asterisk '\*' indicates that *allowedBarks* can hold an unlimited number of *Bark* objects.
 
 Association - a solid line from one class to another is called an association. It means that one class is associated with another class by reference, extension, inheritance, etc.
 
