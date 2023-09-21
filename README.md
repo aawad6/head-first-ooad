@@ -91,7 +91,7 @@ Remember to check your requirements against your use cases.
 * **Use Cases** details exactly what your system should do.
 * A use case has a **single goal**, but can have multiple paths to reach that goal.
 * A good use case has a **starting** and **stopping condition,** an **external initiator**, and **clear value** to the user.
-* A use case is a simply a story about how your system works.
+* A use case is simply a story about how your system works.
 * You will have at least one use case for each goal that your system must accomplish.
 * After your use cases are complete, you can refine and add to your requirements.
 * A requirements list that makes all your use cases possible is a good set of requirements.
@@ -161,3 +161,50 @@ Remember, in Chapter 1, we said that delegation helps our applications stay loos
 * Textual analysis helps you translate a use case into code-level classes, attributes, and operations.
 * The nouns of a use case are candidates for classes in your system, and the verbs are candidates for methods in your system's classes.
 * **Delegations** shields your object from implementation changes to other objects in your software.
+
+## Chapter 5: Part 1: Good Design
+Change is inevitable. No matter how much you like your software right now, it’s probably going to change tomorrow. And the harder you make it for your software to change, the more difficult it’s going to be to respond to your customer’s changing needs.
+
+Abstract classes - placeholders for actual implementation classes. They define behavior, and the subclasses implement that behavior.
+> Whenever you find common behavior in two or more places, look to abstract that behavior into a class, and then reuse that behavior in the common classes.
+
+One of the best ways to see if the software is well-designed is to try and **CHANGE** it.
+
+### OO Principles:
+- Coding to an interface, rather than to an implementation, makes your software easier to extend.
+> By coding to an interface, your code will work with all of the interface’s subclasses—even ones that haven’t been created yet.
+
+- Encapsulation is more than just avoiding lots of copy-and-paste, it helps you protect your classes from unnecessary changes.
+
+- Each class should have only one reason to change.
+> When you see a class that has more than one reason to change, it is probably trying to do too many things. See if you can break up the functionality into multiple classes, where each individual class does only one thing—and therefore has only one reason to change.
+
+### UML Terms (again)
+Interface - the interface in UML has the "<<interface>>" word and italicized *class name*.
+
+Abstract class - *the name of a class* is in italics. Here, we don’t want anyone creating instances of that class; it’s just used to provide a common base for specific implementation classes.
+
+Aggregation "A line with a diamond ---<>" - a special form of association, and means that one thing is made up (in part) of another thing. 
+
+A line with an arrow that isn’t colored in means generalization. You use a generalization to show that a class extends and inherits behavior from a more generalized class.
+
+## Chapter 5: Part 2: Flexible Software
+When you run into problems making changes to your application, it probably means that your software needs to be more flexible and resilient.
+
+**Code once, look twice (or more!)**. Keep looking over your designs when you run into problems. A decision you made earlier may be what’s causing you headaches now.
+
+**Pride kills good design**. Never be afraid to examine your own design decisions, and improve on them, even if it means backtracking.
+
+By encapsulating what varies, you make your application more flexible, and easier to change.
+
+When you have a set of properties that vary across your objects, use a collection, like a Map, to store those properties dynamically.
+
+Most good designs come from analysis of bad designs, so never be afraid to make mistakes and then change things around.
+
+Cohesion - A cohesive class does one thing well and does not try to do or be something else.
+> Cohesion is just a measure of how closely related the functionality of the classes in an application are. If one class is made up of functionality that’s all related, then it has only one reason to change.
+
+The **more cohesive** your software is, the **looser the coupling** between classes. 
+
+Great software is usually about being **good enough**.
+> Spending hours trying to write “perfect software” is a waste of time; spending lots of time writing great software and then moving on, is sure to win you more work, big promotions, and loads of cash and accolades.
