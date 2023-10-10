@@ -208,3 +208,44 @@ The **more cohesive** your software is, the **looser the coupling** between clas
 
 Great software is usually about being **good enough**.
 > Spending hours trying to write “perfect software” is a waste of time; spending lots of time writing great software and then moving on, is sure to win you more work, big promotions, and loads of cash and accolades.
+
+## Chapter 6: Solving Really Big Problems
+You’ve got a ton of tools in your OOA&D toolbox, but how do you use those tools when you have to build something really big?
+
+The best way to solve a big problem by breaking it into lots of functional pieces, and then working on each of those pieces individually.
+
+Commonality - One way you can find out more about a system is to figure out what the system is like.
+
+Variability - Another great way to find out what a system should do is to figure out what it’s not like.
+
+Feature - a high-level description of something a system needs to do. A single feature results in multiple different requirements.
+> Get features from the customer, and then figure out the requirements you need to implement those features.
+
+### Use Case Diagram
+After figuring out the system requirements you might think of writing use cases, but **use cases don’t always help you see the big picture**. A use case diagram could be just what you need.
+> Use case diagrams are the blueprints for your system.
+
+Use your feature list to make sure your use case diagram is complete.
+
+Domain analysis - The process of checking your designs, and describing a problem using terms the customer will understand.
+
+Design pattern - It's a way to design the solution for a particular type of problem. i.e. Model View Controller pattern.
+
+### How To Solve Big Problems
+1. Listen to the customer, and figure out what they want you to build.
+2. Put together a feature list, in a language the customer understands.
+3. Make sure your features are what the customer actually wants. (domain analysis)
+4. Create blueprints of the system using use case diagrams (and use cases).
+5. Break the big system up into lots of smaller sections.
+6. Apply design patterns to the smaller sections of the system.
+7. Use basic OOA&D principles to design and code each smaller section.
+
+### BULLET POINTS
+* The best way to look at a big problem is to view it as a collection of smaller problems.
+* Just like in small projects, start working on big projects by gathering features and requirements.
+* Features are usually 'big' things that a system does, but also can be used interchangeably with the term "requirements".
+* Commonality and variability give you points of comparison between a new system and things you already know about.
+* Use cases are detail-oriented; use case diagrams are focused more on the big picture.
+* Your use case diagram should account for all the features in your system. 
+* Domain analysis is representing a system in language that the customer will understand.
+* An actor is anything that interacts with your system but isn't part of the system.
