@@ -284,3 +284,68 @@ If at any time you're unsure about what a feature means and how you need to impl
 * When you're not sure what a feature is, you should ask the customer, and then try and generalize the answers you get into a good understanding of the feature.
 * Use commonality analysis to build software solutions that are flexible.
 * Customers are a lot more interested in software that does what they want, and comes in on time, than they are in code that you think is really cool.
+
+## Chapter 8: Design Principles
+There’s nothing as satisfying as coming up with a completely new and original solution to a problem that’s been troubling you for days—until you find out someone else solved the same problem, long before you did, and did an even better job than you did!
+
+Design principle - a basic tool or technique that can be applied to designing or writing code to make that code more maintainable, flexible, or extensible.  
+We've already encountered a few design principles like:
+- Encapsulate what varies.
+- Code to an interface rather than to an implementation.
+- Each class in your application should have only one reason to change.
+- Classes are about behavior and functionality.
+
+### The Open-Closed Principle (OCP)
+*Classes should be open for extension (subclassed and extended), and closed for modification.*  
+It’s a combination of encapsulation and abstraction. You’re finding the behavior that stays the same, abstracting that behavior away into a base class, and then locking that code up from modification.
+But then when you need new or different behavior, your subclasses handle the changes by extending the base class. That’s where encapsulation comes in: you’re encapsulating what varies (behavior in the subclasses) away from what stays the same (the common behavior in the base class).
+
+### The Don’t Repeat Yourself Principle (DRY)
+*Avoid duplicate code by abstracting out things that are common and placing those things in a single location.*  
+Additionally, it's about having each piece of information and behavior in your system in a **single**, **sensible place**.  
+DRY is related to your features and requirements, so you should try applying it while gathering those features and requirements as well as writing code.
+
+### The Single Responsibility Principle (SRP)
+*Every object in your system should have a single responsibility, and all the object’s services should be focused on carrying out that single responsibility.*  
+The SRP is just another name for **Cohesion**, and can be implemented correctly when each of your objects has only one reason to change.
+
+You can spot classes that aren’t using the SRP with a simple test:  
+On a sheet of paper, write down a bunch of lines like this: *The [blank] [blanks] itself*,  
+In the first blank of each line, write down the class name; in the second blank, write down one of the methods in the class.  
+Read each line out loud, does what you just said make any sense? Does your class really have the responsibility that the method indicates it does?
+
+### The Liskov Substitution Principle (LSP)
+*Subtypes must be substitutable for their base types.*  
+The LSP is all about well-designed inheritance. When you inherit from a base class, you must be able to substitute your subclass for that base class without things going terribly wrong. Otherwise, you’ve used inheritance incorrectly!
+
+#### Delegation
+*Delegation is when you hand over the responsibility for a particular task to another class or method.*  
+If you need to use functionality in another class, but **you don’t want to change** that functionality, consider using delegation instead of inheritance.
+
+#### Composition
+*Composition allows you to use behavior from a family of other classes, and to change that behavior at runtime.*  
+Composition is most powerful when you want to use behavior defined in an interface, and then choose from a variety of implementations of that interface, at both compile time and run time.
+
+In composition, the object composed of other behaviors owns those behaviors. When the object is destroyed, so are all of its behaviors.
+
+#### Aggregation
+*Aggregation is when one class is used as part of another class, but still exists outside of that other class.*  
+What happens when you want all the benefits of composition—flexibility in choosing a behavior, and adhering to the LSP—but your composed objects need to exist outside of your main object? That’s where aggregation comes in.
+
+All three of the aforementioned OO techniques allow you to reuse behavior without violating the LSP.
+
+If you favor delegation, composition, and aggregation over inheritance, your software will usually be more flexible, and easier to maintain, extend, and reuse.
+
+### BULLET POINTS
+* The Open-Closed Principle keeps your software reusable, but still flexible, by keeping classes open for extension, but closed for modification.
+* With classes doing one single thing through the Single Responsibility Principle, it’s even easier to apply the OCP to your code.
+* When you’re trying to determine if a method is the responsibility of a class, ask yourself, Is it this class’s job to do this particular thing? If not, move the method to another class.
+* Once you have your OO code nearly complete, be sure that you Don’t Repeat Yourself. You’ll avoid duplicate code, and ensure that each behavior in your code is in a single place.
+* DRY applies to requirements as well as your code: you should have each feature and requirement in your software implemented in a single place.
+* The Liskov Substitution Principle ensures that you use inheritance correctly, by requiring that subtypes be substitutable for their base types.
+* When you find code that violates the LSP, consider using delegation, composition, or aggregation to use behavior from other classes without resorting to inheritance.
+* If you need behavior from another class but don’t need to change or modify that behavior, you can simply delegate to that class to use the desired behavior.
+* Composition lets you choose a behavior from a family of behaviors, often via several implementations of an interface.
+* When you use composition, the composing object owns the behaviors it uses, and they stop existing as soon as the composing object does.
+* Aggregation allows you to use behaviors from another class without limiting the lifetime to those behaviors.
+* Aggregated behaviors continue to exist even after the aggregating object is destroyed.
