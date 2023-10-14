@@ -56,7 +56,7 @@ OOA&D is really just an approach to writing software that focuses on making sure
 * Always begin a project by figuring out what the customer wants.
 * Once you've got the basic functionality of an app in place work on refining the design so it's flexible.
 * With a functional and flexible design, you can employ design patterns to improve your design further and make your app easier to reuse.
-* Find the parts of your application that change often, and try and separate them from parts of your application that don't change.
+* Find the parts of your application that change often, and try to separate them from parts of your application that don't change.
 * Building an application that works well but is poorly designed satisfies the customer but will leave you with plain, suffering, and lots of late nights fixing problems.
 * Object-oriented analysis and design (OOA&D) provides a way to produce well-designed applications that satisfy both the customer and the programmer.
 
@@ -212,7 +212,7 @@ Great software is usually about being **good enough**.
 ## Chapter 6: Solving Really Big Problems
 You’ve got a ton of tools in your OOA&D toolbox, but how do you use those tools when you have to build something really big?
 
-The best way to solve a big problem by breaking it into lots of functional pieces, and then working on each of those pieces individually.
+The best way to solve a big problem is by breaking it into lots of functional pieces, and then working on each of those pieces individually.
 
 Commonality - One way you can find out more about a system is to figure out what the system is like.
 
@@ -249,3 +249,38 @@ Design pattern - It's a way to design the solution for a particular type of prob
 * Your use case diagram should account for all the features in your system. 
 * Domain analysis is representing a system in language that the customer will understand.
 * An actor is anything that interacts with your system but isn't part of the system.
+
+## Chapter 7: Architecture
+It’s time to take all those little pieces laying around your workspace, and figure out how to turn them into a well-ordered, well-designed application.
+
+Architecture - your design structure, and highlights the most important parts of your app, and the relationships between those parts.
+
+The things in your application that are really important are architecturally significant, and you should focus on them FIRST, when you’re trying to figure out if something is architecturally significant, there are three questions you can ask:
+- Is it part of the essence of the system?
+> Can you imagine the system without that feature? If not, then you’ve probably found a feature that is part of the essence of a system.
+- What the heck does it mean?
+> Anytime you’re unsure about what something is, it could create problems with the rest of the system. Spend time on these features early, rather than late.
+- How the heck do I do it?
+> If you have no idea how you’re going to tackle a particular problem, you better spend some time upfront looking at that feature, so it doesn’t create lots of problems down the road.
+
+Focus on one feature at a time to **reduce risk** in your project, and don’t get distracted by features that won’t help reduce risk.
+
+In this stage (architecture) we’re focusing on doing just the things that reduce risk, no matter what are these things, it could be writing a code for a couple of classes or even drawing a class diagram for others. 
+> Sometimes the best way to write great code is to hold off on writing code as long as you can.
+
+Architecture is all about reducing the risks of you delivering your software late, or having it not work like the customer wants it to. Our key feature list, class diagrams, and those partially done classes all help make sure we’re not just developing great *code*, but that we’re developing great *software*.
+
+If at any time you're unsure about what a feature means and how you need to implement that feature in your system:
+1- Ask the customer.
+2- Apply Commonality analysis.
+3- Put an implementation plan.
+
+### BULLET POINTS
+* Architecture helps you turn all your diagrams, plans, and feature lists into a well-ordered application.
+* The features in your system that are most important to the project are architecturally significant.
+* Focus on features that are the essence of your system, that you’re unsure about the meaning of, or unclear about how to implement first.
+* Everything you do in the architectural stages of a project should reduce the risks of your project failing.
+* If you don't need all the details of a use case, writing a scenario detailing how your software could be used can help you gather requirements quickly.
+* When you're not sure what a feature is, you should ask the customer, and then try and generalize the answers you get into a good understanding of the feature.
+* Use commonality analysis to build software solutions that are flexible.
+* Customers are a lot more interested in software that does what they want, and comes in on time, than they are in code that you think is really cool.
