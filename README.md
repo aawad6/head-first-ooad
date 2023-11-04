@@ -349,3 +349,61 @@ If you favor delegation, composition, and aggregation over inheritance, your sof
 * When you use composition, the composing object owns the behaviors it uses, and they stop existing as soon as the composing object does.
 * Aggregation allows you to use behaviors from another class without limiting the lifetime to those behaviors.
 * Aggregated behaviors continue to exist even after the aggregating object is destroyed.
+
+## Chapter 9: Iteration and Testing
+Now that you’ve got a solid OO programming toolkit, it’s time to learn how you can prove to the customer that your software works.
+
+You write great software **iteratively**. Work on the big picture, and then iterate over pieces of the app until it’s complete. Each time you iterate, reevaluate your design decisions, and don’t be afraid to **CHANGE** something if it makes sense for your design.
+
+There is more than one way to iterate into specific parts of your application:
+1- Feature driven development ...is when you pick a specific feature in your app, and plan, analyze, and develop that feature to completion.
+2- Use case driven development: is when you pick a scenario through a use case, and write code to support that complete scenario through the use case.
+
+### What’s the difference between feature driven and use case driven development?
+| Feature driven development  | Use case driven development |
+| ------------- | ------------- |
+| Works well when you have a lot of different features that don’t interconnect a whole lot.  | Works well when your app has lots of processes and scenarios rather than individual pieces of functionality.  |
+| Allows you to show the customer working code faster.  | Allows you to show the customer bigger pieces of functionality at each stage of development.  |
+| Is very functionality-driven. You’re not going to forget about any features using feature driven development.  | Is very user-centric. You’ll code for all the different ways a user can use your system with use case driven development.  |
+| Works particularly well on systems with lots of disconnected pieces of functionality  | Works particularly well on transactional systems, where the system is largely defined by lengthy, complicated processes.  |
+
+As the customers want to see something that makes sense to them, they may want to make sure that the code is works well, you can just impelement some test cases. Test cases don’t have to be very complex; they just provide a way to show your customer that the functionality in your classes is working correctly. 
+
+You should test your software for every possible usage you can think of. Be creative!  
+Don’t forget to test for incorrect usage of the software, too. You’ll catch errors early, and make your customers very happy.
+
+It's totally okay if you haven't written any code yet, but implementing test cases, this approach called Test driven development and it focuses on getting the behavior of your classes right.
+
+### Test cases dissected:
+- Each test case should have an ID and a name.
+- Each test case should have one specific thing that it tests.
+- Each test case should have an input you supply.
+- Each test case should have an output that you expect.
+- Most test cases have a starting state.
+
+When you’re writing software, you’re also creating a contract between that software and the people that use it, this is called **programming by contract**. The contract details how the software will work when certain actions are taken.  
+
+If you don’t think your code will be used correctly? Or if you think that certain actions are such a bad idea that you don’t want to let users deal with them in their own way (i.e. return null values)? In these cases, you may want to consider **defensive programming** (throw checked exceptions).
+> In **defensive programming**, we’re not really that interested in what the client wants (programming contract). We’re making sure that we aren’t responsible for crashing a program, and we even go out of our way to try and prevent the client from crashing their program.
+
+When you are **programming by contract**, you’re working with client code to **agree** on how you’ll handle problem situations.
+
+When you’re **programming defensively**, you’re making sure the client gets a “safe” response, *no matter what the client wants* to have happen.
+
+### BULLET POINTS
+* The first step in writing good software is to make sure your application works like the customer expects and wants it to.
+* Customers don’t usually care about diagrams and lists; they want to see your software actually do something.
+* Use case driven development focuses on one scenario in a use case in your application at a time.
+* In use case driven development, you focus on a single scenario at a time, but you also usually code all the scenarios in a single use case before moving on to any other scenarios, in other use cases.
+* Feature driven development allows you to code a complete feature before moving on to anything else.
+* You can choose to work on either big or small features in feature-driven development, as long as you take each feature one at a time.
+* Software development is always iterative. You look at the big picture, and then iterate down to smaller pieces of functionality.
+* You have to do analysis and design at each step of your development cycle, including when you start working on a new feature or use case.
+* Tests allow you to make sure your software doesn’t have any bugs, and let you prove to your customer that your software works.
+* A good test case only tests one specific piece of functionality.
+* Test cases may involve only one, or several, methods in a single class, or may involve multiple classes.
+* Test driven development is based on the idea that you write your tests first, and then develop software that passes those tests. The result is fully functional, working software.
+* Programming by contract assumes both sides in a transaction understand what actions generate what behavior, and will abide by that contract.
+* Methods usually return null or unchecked exceptions when errors occur in programming by contract environments.
+* Defensive programming looks for things to go wrong, and tests extensively to avoid problem situations.
+* Methods usually return “empty” objects or throw checked exceptions in defensive programming environments.
