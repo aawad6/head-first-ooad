@@ -407,3 +407,32 @@ When you’re **programming defensively**, you’re making sure the client gets 
 * Methods usually return null or unchecked exceptions when errors occur in programming by contract environments.
 * Defensive programming looks for things to go wrong, and tests extensively to avoid problem situations.
 * Methods usually return “empty” objects or throw checked exceptions in defensive programming environments.
+
+## Chapter 10: The OOA&D Lifecycle
+We’ve got a lot of new tools, techniques, and ideas about how to develop great software by now... but we still haven’t really put it all together. That’s what this chapter is all about.
+
+To develop a software in the OOA&D style, probably you have to follow the following steps:
+1. Feature List
+	- Usually you'll start by holding a statement of work (SoW) that will be turned into a list of features, and with this list in hand, you should have a good understanding of the things that your app needs to do.
+2. Use Case Diagrams
+	- Use case diagrams will let you start thinking about how your software will be used, without getting into a bunch of unnecessary details.
+	- In order for the use cases to actually work, your system must do the features in your system which reflect your system’s functionality. Even though the functionality isn’t always an explicit part of any particular use case.
+	- Make sure that every feature matches up to a use case, even indirectly, and if it doesn’t, you should take a hard look at the feature, and make sure it really is a required part of your system.
+3. Break Up the Problem
+	- With use case diagrams in place, you’re ready to break this problem up into some smaller pieces of functionality.
+	- That means keeping different pieces of functionality separate, wrap it in a module each module should have a single responsibility.
+	- Once you’ve broken up your software into several individual pieces of functionality, you’re ready to start iterating over each piece of functionality, until the application is complete.
+For every use case you have apply the follwing:
+4. Requirements
+	- At this point, we need to take our big-picture view of the system, from our use case diagram, and refine that into a use case *(NOT THE DIAGRAM)* that we can begin to tackle, one by one.
+5. Domain Analysis
+ 	- Perform textual analysis on the use case you've written, and figure out the nouns that are candidate classes, and the verbs that are candidate operations.
+6. Preliminary Design
+	- Using the candidate nouns and verbs you got from the use case, draw a class diagram with the aid of associations and any other UML notation you think will help make your design clear and understandable.
+	- Your design decisions should be done here.
+7. Implementation Delivery
+	- Simply, start to code.
+
+### BULLET POINTS
+* You should only expose clients of your code to the classes that they NEED to interact with. As classes that the clients don’t interact with can be changed with minimal client code being affected.
+* OOA&D is about having lots of options. There is never one right way to solve a problem, so the more options you have, the better chance you’ll find a good solution to every problem. 
